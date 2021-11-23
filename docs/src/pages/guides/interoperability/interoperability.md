@@ -595,6 +595,18 @@ Emotion's **css()** method works seamlessly with MUI.
 
 It works exactly like styled components. You can [use the same guide](/guides/interoperability/#styled-components).
 
+In order to get proper type checking in Emotion's theme you need make it extend Material's theme:
+
+```ts
+import { Theme as MuiTheme } from "@mui/material/styles";
+
+declare module '@emotion/react' {
+  export interface Theme extends MuiTheme {}
+}
+```
+
+For detailse see https://emotion.sh/docs/typescript#define-a-theme
+
 ### The `styled()` API
 
 It works exactly like styled components. You can [use the same guide](/guides/interoperability/#styled-components).
